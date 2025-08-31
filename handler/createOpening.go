@@ -7,7 +7,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CreateOpeningHendler(ctx *gin.Context) {
+// @BasePath /api/v1
+
+// @Summary Create opening
+// @Schemes
+// @Description Create a new job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param request body CreateOpeningRequest true "Request Body"
+// @Success 200 {object} CreateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [post]
+func CreateOpeningHandler(ctx *gin.Context) {
 	request := CreateOpeningRequest{}
 
 	ctx.BindJSON(&request)

@@ -7,7 +7,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func UpdateOpeningHendler(ctx *gin.Context) {
+// @BasePath /api/v1
+
+// @Summary Update opening
+// @Schemes
+// @Description Update a job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening identification"
+// @Param request body UpdateOpeningRequest true "Opening data"
+// @Success 200 {object} UpdateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
+func UpdateOpeningHandler(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 
 	ctx.BindJSON(&request)
